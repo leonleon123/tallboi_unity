@@ -13,8 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [Range(0, 100)]
     public float speed = 50;
 
-    [Range(0, 100)]
-    public float mouseAcceleration = 0.5f;
+    [Range(0, 1000)]
+    public float mouseSensitivity = 0.5f;
 
     public float jumpDuration = 0.4f;
 
@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
         float mouseX = Input.GetAxis("Mouse X");
 
-        transform.Rotate(Vector3.up * mouseX * mouseAcceleration * Time.deltaTime);
+        transform.Rotate(Vector3.up * mouseX * mouseSensitivity * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space) && characterController.isGrounded)
         {
