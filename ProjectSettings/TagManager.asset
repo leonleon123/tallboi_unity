@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - JumpTarget
+  - HatPickup
+  - Hat
+  - Wall
   layers:
   - Default
   - TransparentFX
