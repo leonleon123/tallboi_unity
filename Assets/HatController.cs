@@ -6,7 +6,12 @@ public class HatController : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private int numHats = 0;
+    [Range(0, 1)]
+    public float hatHeight = 0.2f;
+    [Range(0, 1)]
+    public float hatOffset = 0.6f;
+
+    private Stack<GameObject> hats; 
 
     public void addHat()
     {
@@ -20,21 +25,48 @@ public class HatController : MonoBehaviour
                 GameObject hat = Instantiate(child.gameObject);
                 hat.SetActive(true);
                 hat.transform.SetParent(transform);
-                hat.transform.localPosition = new Vector3(0, 0.6f + numHats * 0.2f, 0);
+                hat.transform.localPosition = new Vector3(0, hatOffset + hats.Count * hatHeight, 0);
                 hat.transform.localRotation = Quaternion.identity;
-                hat.transform.localScale = new Vector3(1, 0.2f, 1);
-                CharacterController controller = GetComponent<CharacterController>();
-                numHats++;
-                controller.height = 1 + 0.2f * numHats;
-                controller.center = new Vector3(0, 0.1f * numHats, 0);
+                hat.transform.localScale = new Vector3(1, hatHeight, 1);
+                hats.Push(hat);
+                resizePlayer();
+                
                 break;
             }
         }
     }
 
+    private void resizePlayer()
+    {
+        CharacterController controller = GetComponent<CharacterController>();
+        controller.height = 1 + hatHeight * hats.Count;
+        controller.center = new Vector3(0, (hatHeight/2) * hats.Count, 0);
+    }
+
+    public bool removeHat()
+    {
+        if(hats.Count > 0)
+        { 
+            Debug.Log("Removing hat");
+            GameObject hat = hats.Pop();
+            Destroy(hat);
+            resizePlayer();
+            return true;
+        }
+        return false;
+    }
+
+    public void removeAllHats()
+    {
+        while(hats.Count > 0)
+        {
+            removeHat();
+        }
+    }
+
     void Start()
     {
-        
+        hats = new Stack<GameObject>();
     }
 
     // Update is called once per frame

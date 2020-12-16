@@ -87,4 +87,15 @@ public class PlayerMovement : MonoBehaviour
 
         //Debug.Log("Horizontal: " + h + " Vertical: " + v + " Normalized: " + movement.normalized.ToString());
     }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.collider.transform.CompareTag("Wall"))
+        {
+            // stop jumping if you hit the wall
+            // should be done with raycasts, to block jumps that are too close to a wall
+            jump = maxJumpHeight;
+            jumping = false;
+        }
+    }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class HatPickup : MonoBehaviour
 {
 
+    public bool giveHat = true;
     public float rotationSpeed = 100.0f;
 
     // Start is called before the first frame update
@@ -23,9 +24,18 @@ public class HatPickup : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            gameObject.SetActive(false);
+            
             HatController hatController = other.GetComponent<HatController>();
-            hatController.addHat();
+            if (giveHat)
+            {
+                hatController.addHat();
+                gameObject.SetActive(false);
+            }
+            else
+            { 
+                if(hatController.removeHat())
+                    gameObject.SetActive(false);
+            }
         }
     }
 }
