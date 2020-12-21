@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Lever
   - Door
+  - GreenLaser
   layers:
   - Default
   - TransparentFX

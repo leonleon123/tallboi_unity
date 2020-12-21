@@ -43,7 +43,7 @@ public class LeverThink : MonoBehaviour
         {
             doorOffset += speed;
             door.transform.Translate(0, speed, 0);
-            if(doorOffset > door.transform.localScale.y)
+            if(doorOffset > moveDistance)
             {
                 doorOpening = false;
             }
@@ -54,7 +54,7 @@ public class LeverThink : MonoBehaviour
     {
         if(!pulled)
         {
-            Debug.Log("Called activate");
+            //Debug.Log("Called activate");
             anim.Play("Pull");
             pulled = true;
             OpenDoor();

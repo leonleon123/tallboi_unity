@@ -8,7 +8,6 @@ public class Settings : MonoBehaviour
     void Start()
     {
         QualitySettings.vSyncCount = 1;
-        Debug.Log("hello");
     }
 
     // Update is called once per frame
