@@ -12,6 +12,7 @@ public class GreenLaserThink : MonoBehaviour
     public int minHats = 0; //hardcoded minimum of hats, should be 0 in most cases, because of smart detection (which prevents jump abuse)
     public float speed = 0.005f;
     public float moveDistance = 0;
+    public bool takeHats = false;
 
 
     bool charging = false;
@@ -103,5 +104,7 @@ public class GreenLaserThink : MonoBehaviour
         script.LineColor = activatedColor;
         activated = true;
         OpenDoor();
+        if (takeHats)
+            hatController.removeAllHats();
     }
 }
