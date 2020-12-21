@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     float jumpStartTime = 0;
     float jump = 0;
     float jumpPrev = 0;
+    bool frozen = false;
     bool jumping = false;
     PlayerControls controls;
     
@@ -32,6 +33,16 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         spawnPoint = this.transform.position;
         controls = gameObject.GetComponent<PlayerControls>();
+    }
+
+    public void Freeze()
+    {
+        frozen = true;
+    }
+
+    public void UnFreeze()
+    {
+        frozen = false;
     }
 
     void Update()
@@ -81,6 +92,10 @@ public class PlayerMovement : MonoBehaviour
             //characterController.enabled = true;
             //Debug.Log("Respawning: " + spawnPoint.ToString());
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else if(frozen)
+        {
+            characterController.Move(Vector3.zero*Time.deltaTime * speed+gravity);
         }
         else
         {
