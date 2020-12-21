@@ -8,6 +8,8 @@ TagManager:
   - HatPickup
   - Hat
   - Wall
+  - Lever
+  - Door
   layers:
   - Default
   - TransparentFX

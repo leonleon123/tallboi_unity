@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -23,12 +24,14 @@ public class PlayerMovement : MonoBehaviour
     float jump = 0;
     float jumpPrev = 0;
     bool jumping = false;
+    PlayerControls controls;
     
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         spawnPoint = this.transform.position;
+        controls = gameObject.GetComponent<PlayerControls>();
     }
 
     void Update()
@@ -46,8 +49,8 @@ public class PlayerMovement : MonoBehaviour
             v = Input.GetAxis("Vertical");
         }
 
-        bool requestJump = Input.GetKeyDown(KeyCode.Space);
-        bool requestRespawn = Input.GetKeyDown(KeyCode.R);
+        bool requestJump = Input.GetKeyDown(controls.jumpKey);
+        bool requestReset = Input.GetKeyDown(controls.resetKey);
 
         float mouseX = Input.GetAxis("Mouse X");
 
@@ -71,12 +74,13 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movement = transform.forward * v + transform.right * h;
 
-        if (requestRespawn)
+        if (requestReset)
         {
-            characterController.enabled = false;
-            characterController.transform.position = spawnPoint;
-            characterController.enabled = true;
-            Debug.Log("Respawning: " + spawnPoint.ToString());
+            //characterController.enabled = false;
+            //characterController.transform.position = spawnPoint;
+            //characterController.enabled = true;
+            //Debug.Log("Respawning: " + spawnPoint.ToString());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else
         {

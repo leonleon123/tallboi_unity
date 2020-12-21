@@ -29,12 +29,17 @@ public class HatPickup : MonoBehaviour
             if (giveHat)
             {
                 hatController.addHat();
+                hatController.deactivatedPickups.Add(gameObject);
                 gameObject.SetActive(false);
             }
             else
-            { 
-                if(hatController.removeHat())
+            {
+                if (hatController.removeHat())
+                {
+                    hatController.deactivatedPickups.Add(gameObject);
                     gameObject.SetActive(false);
+                    
+                }
             }
         }
     }
