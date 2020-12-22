@@ -57,11 +57,11 @@ public class GreenLaserThink : MonoBehaviour
         if (doorOpening)
         {
             doorOffset += speed;
-            Debug.Log(doorOffset);
+            //Debug.Log(doorOffset);
             door.transform.Translate(0, speed, 0);
             if (doorOffset >= moveDistance)
             {
-                Debug.Log("Stopping door");
+                //Debug.Log("Stopping door");
                 doorOpening = false;
             }
         }

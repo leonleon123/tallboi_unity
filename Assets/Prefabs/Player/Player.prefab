@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 108886015281508882}
   - component: {fileID: 108886015281508893}
   - component: {fileID: 108886015281508892}
-  - component: {fileID: 271935018}
   m_Layer: 0
   m_Name: Hat
   m_TagString: Hat
@@ -94,18 +93,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &271935018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108886015281508894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d60d6042517aec4da644aaa35fa9d38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2499055489407707279
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +109,7 @@ GameObject:
   - component: {fileID: 2499055489407707273}
   - component: {fileID: 108886017271936884}
   - component: {fileID: 2036514930}
+  - component: {fileID: 597168317}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -225,6 +213,8 @@ MonoBehaviour:
   resetKey: 114
   activateKey: 102
   jumpKey: 32
+  Debug_addHat: 111
+  Debug_removeHat: 112
 --- !u!114 &2499055489407707273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 2499055489407707276}
-  maxJumpHeight: 3.09
+  maxJumpHeight: 1.7
   speed: 6
   mouseSensitivity: 235
   jumpDuration: 0.3
@@ -259,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hatHeight: 0.2
   hatOffset: 0.6
+  deactivatedPickups: []
 --- !u!114 &2036514930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +260,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3d11208c0321e341bff7333dce0dea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &597168317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2499055489407707279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8f3adeaaea6c4418c24bda89ff3f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2499055490858998516

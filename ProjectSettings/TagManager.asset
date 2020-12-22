@@ -11,6 +11,8 @@ TagManager:
   - Lever
   - Door
   - GreenLaser
+  - Path
+  - SecurityGuard
   layers:
   - Default
   - TransparentFX
