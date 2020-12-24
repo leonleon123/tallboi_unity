@@ -30,14 +30,22 @@ public class HatController : MonoBehaviour
         hat.transform.localRotation = Quaternion.identity;
         hat.transform.localScale = new Vector3(1, hatHeight, 1);
         hats.Push(hat);
-        resizePlayer();
+        resizePlayer(true);
     }
 
-    private void resizePlayer()
+    private void resizePlayer(bool add)
     {
         CharacterController controller = GetComponent<CharacterController>();
-        controller.height += hatHeight;
-        controller.center += new Vector3(0, (hatHeight/2), 0);
+        if(add)
+        { 
+            controller.height += hatHeight;
+            controller.center += new Vector3(0, (hatHeight/2), 0);
+        }
+        else
+        {
+            controller.height -= hatHeight;
+            controller.center -= new Vector3(0, (hatHeight / 2), 0);
+        }
     }
 
     public bool removeHat()
@@ -47,7 +55,7 @@ public class HatController : MonoBehaviour
             Debug.Log("Removing hat");
             GameObject hat = hats.Pop();
             Destroy(hat);
-            resizePlayer();
+            resizePlayer(false);
             return true;
         }
         return false;

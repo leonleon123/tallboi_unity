@@ -22,8 +22,8 @@ public class GuardController : MonoBehaviour
             foreach (GameObject guard in guards)
             {
                 //Debug.Log(Vector3.Distance(gameObject.transform.position, lever.transform.position));
-
-                if (Vector3.Distance(gameObject.transform.position, guard.transform.position) < 1.7)
+                //Debug.Log(Vector3.Distance(gameObject.transform.position, guard.transform.position));
+                if (Vector3.Distance(gameObject.transform.position, guard.transform.position) < 2)
                 {
 
                     //bool requestDistract = Input.GetKeyDown(controls.activateKey);

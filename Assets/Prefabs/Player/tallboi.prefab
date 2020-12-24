@@ -1098,6 +1098,7 @@ GameObject:
   - component: {fileID: 8258716190867444905}
   - component: {fileID: 8258716190867444904}
   - component: {fileID: 1556656519}
+  - component: {fileID: 2446771911293051317}
   m_Layer: 0
   m_Name: tallboi
   m_TagString: Player
@@ -1226,3 +1227,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 3
+--- !u!114 &2446771911293051317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105631176489124695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8f3adeaaea6c4418c24bda89ff3f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
