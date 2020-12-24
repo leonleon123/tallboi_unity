@@ -15,28 +15,22 @@ public class HatController : MonoBehaviour
     public Stack<GameObject> hats;
     [HideInInspector]
     public List<GameObject> deactivatedPickups;
+    public GameObject head;
+    public GameObject hatObject;
+
     private PlayerControls controls;
+
     public void addHat()
     {
         Debug.Log("Adding hat...");
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            Transform child = transform.GetChild(i);
-            if (child.tag == "Hat")
-            {
-                
-                GameObject hat = Instantiate(child.gameObject);
-                hat.SetActive(true);
-                hat.transform.SetParent(transform);
-                hat.transform.localPosition = new Vector3(0, hatOffset + hats.Count * hatHeight, 0);
-                hat.transform.localRotation = Quaternion.identity;
-                hat.transform.localScale = new Vector3(1, hatHeight, 1);
-                hats.Push(hat);
-                resizePlayer();
-                
-                break;
-            }
-        }
+        GameObject hat = Instantiate(hatObject);
+        hat.SetActive(true);
+        hat.transform.SetParent(head.transform);
+        hat.transform.localPosition = new Vector3(0, hatOffset + hats.Count * hatHeight, 0);
+        hat.transform.localRotation = Quaternion.identity;
+        hat.transform.localScale = new Vector3(1, hatHeight, 1);
+        hats.Push(hat);
+        resizePlayer();
     }
 
     private void resizePlayer()

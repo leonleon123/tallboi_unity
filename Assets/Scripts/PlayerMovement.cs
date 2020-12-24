@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public CharacterController characterController;
+    CharacterController characterController;
 
     [Range(1, 10)]
     public float maxJumpHeight = 1;
@@ -26,13 +26,18 @@ public class PlayerMovement : MonoBehaviour
     bool frozen = false;
     bool jumping = false;
     PlayerControls controls;
+
+    Animator animator;
     
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         spawnPoint = this.transform.position;
-        controls = gameObject.GetComponent<PlayerControls>();
+        characterController = GetComponent<CharacterController>();
+        controls = GetComponent<PlayerControls>();
+        animator = GetComponent<Animator>();
+        
     }
 
     public void Freeze()
@@ -60,7 +65,29 @@ public class PlayerMovement : MonoBehaviour
             v = Input.GetAxis("Vertical");
         }
 
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            animator.SetBool("isWalking", true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            animator.SetBool("isWalking", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        {
+            animator.SetBool("isWalkingBackwards", true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        {
+            animator.SetBool("isWalkingBackwards", false);
+        }
+
+
         bool requestJump = Input.GetKeyDown(controls.jumpKey);
+        Debug.Log(requestJump);
         bool requestReset = Input.GetKeyDown(controls.resetKey);
 
         float mouseX = Input.GetAxis("Mouse X");
@@ -71,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpStartTime = Time.time;
             jumping = true;
+            animator.SetBool("isJumping", true);
         }
 
         jumpPrev = jump;
@@ -81,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpStartTime = Time.time;
             jumping = false;
+            animator.SetBool("isJumping", false);
         }
 
         Vector3 movement = transform.forward * v + transform.right * h;
