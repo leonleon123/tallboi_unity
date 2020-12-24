@@ -12,6 +12,8 @@ TagManager:
   - Door
   - GreenLaser
   - AnimationRig
+  - Path
+  - SecurityGuard
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Minimap
   - 
   - 
   - 
