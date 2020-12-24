@@ -9,6 +9,8 @@ public class LeverController : MonoBehaviour
     private GameObject[] levers;
     //private GameObject nearbyLever;
     PlayerControls controls;
+    public float distance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +26,9 @@ public class LeverController : MonoBehaviour
         { 
             foreach (GameObject lever in levers)
             {
-                //Debug.Log(Vector3.Distance(gameObject.transform.position, lever.transform.position));
+                Debug.Log(Vector3.Distance(gameObject.transform.position, lever.transform.position));
             
-                if (Vector3.Distance(gameObject.transform.position, lever.transform.position) < 1.7)
+                if (Vector3.Distance(gameObject.transform.position, lever.transform.position) < distance)
                 {
                     
                     LeverThink leverThink = lever.GetComponent<LeverThink>();

@@ -36,8 +36,8 @@ public class HatController : MonoBehaviour
     private void resizePlayer()
     {
         CharacterController controller = GetComponent<CharacterController>();
-        controller.height = 1 + hatHeight * hats.Count;
-        controller.center = new Vector3(0, (hatHeight/2) * hats.Count, 0);
+        controller.height += hatHeight;
+        controller.center += new Vector3(0, (hatHeight/2), 0);
     }
 
     public bool removeHat()
