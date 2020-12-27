@@ -1208,7 +1208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14809ec3cfc87949a8b1b7c084d31df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hatHeight: 0.2
+  hatHeight: 0.6
   hatOffset: 0.6
   deactivatedPickups: []
   head: {fileID: 6711325605688348053}

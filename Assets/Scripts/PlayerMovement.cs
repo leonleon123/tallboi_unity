@@ -87,7 +87,6 @@ public class PlayerMovement : MonoBehaviour
 
 
         bool requestJump = Input.GetKeyDown(controls.jumpKey);
-        Debug.Log(requestJump);
         bool requestReset = Input.GetKeyDown(controls.resetKey);
 
         float mouseX = Input.GetAxis("Mouse X");
