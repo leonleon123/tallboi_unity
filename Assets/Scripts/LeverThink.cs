@@ -5,25 +5,27 @@ using UnityEngine;
 public class LeverThink : MonoBehaviour
 {
     // Start is called before the first frame update
-    Animator anim;
     public float speed = 0.05f;
     public float moveDistance = 0;
+
     public GameObject minimapWall;
     public GameObject minimapWall2;
+
+    public GameObject door;
+
     [HideInInspector]
     public bool pulled
     {
         get; private set;
     }
-    private GameObject door;
-    private bool doorOpening = false;
-    private float doorOffset = 0;
+    Animator anim;
     private Vector3 doorSpawnLoc;
     
     void Start()
     {
         anim = GetComponent<Animator>();
         pulled = false;     
+
 
         for (int i = 0; i < transform.parent.childCount;i++)
         {
@@ -36,20 +38,13 @@ public class LeverThink : MonoBehaviour
                     moveDistance = door.transform.localScale.y;
             }
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(doorOpening)
-        {
-            doorOffset += speed;
-            door.transform.Translate(0, speed, 0);
-            if(doorOffset > moveDistance)
-            {
-                doorOpening = false;
-            }
-        }
+
     }
 
     public void Activate()
@@ -67,16 +62,14 @@ public class LeverThink : MonoBehaviour
 
     void OpenDoor()
     {
-        doorOpening = true;
-        
+        Door d = door.GetComponent<Door>();
+        d.Open();
     }
 
     public void ResetLever()
     {
         pulled = false;
         anim.Rebind();
-        doorOffset = 0;
-        doorOpening = false;
         door.transform.position = doorSpawnLoc;
     }
 }

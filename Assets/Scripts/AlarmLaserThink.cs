@@ -59,7 +59,6 @@ public class AlarmLaserThink : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
         if (!activated && !charging)
         {
             if (other.CompareTag("Player") || other.CompareTag("Hat"))

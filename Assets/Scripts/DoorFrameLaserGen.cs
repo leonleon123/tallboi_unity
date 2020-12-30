@@ -5,20 +5,21 @@ using UnityEngine.ProBuilder;
 using UnityEngine.ProBuilder.MeshOperations;
 public class DoorFrameLaserGen : MonoBehaviour
 {
-    public GameObject player;
-
     void Start()
     {
         DoorFrameConf doorFrameConf = GetComponentInParent<DoorFrameConf>();
-        //transform.localScale = new Vector3(transform.localScale.x, 1, transform.localScale.z);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         CharacterController ch = player.GetComponent<CharacterController>();
         HatController hc = player.GetComponent<HatController>();
 
-        transform.localPosition = new Vector3(
-            0, 
-            ch.height * player.transform.localScale.y + hc.hatOffset + doorFrameConf.size * hc.hatHeight - hc.hatHeight / 2 , 
-            0
-        );
+        if(doorFrameConf?.size != null)
+        {
+            transform.localPosition = new Vector3(
+                transform.localPosition.x, 
+                ch.height * player.transform.localScale.y + hc.hatOffset + doorFrameConf.size * hc.hatHeight - hc.hatHeight / 2 ,
+                transform.localPosition.z
+            );
+        }
 
     }
     void Update()
