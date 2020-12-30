@@ -26,7 +26,7 @@ public class LeverController : MonoBehaviour
         { 
             foreach (GameObject lever in levers)
             {
-                Debug.Log(Vector3.Distance(gameObject.transform.position, lever.transform.position));
+                //Debug.Log(Vector3.Distance(gameObject.transform.position, lever.transform.position));
             
                 if (Vector3.Distance(gameObject.transform.position, lever.transform.position) < distance)
                 {

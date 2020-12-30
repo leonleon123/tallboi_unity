@@ -36,22 +36,21 @@ public class HatController : MonoBehaviour
 
     private void resizePlayer(bool add)
     {
-        Debug.Log(hatHeight);
         if(add)
         { 
-            if(hats.Count == 1)
-            {
-                controller.height += hatOffset / transform.localScale.y;
-            }
+            //if(hats.Count == 1)
+            //{
+            //    controller.height += hatOffset / transform.localScale.y;
+            //}
             controller.height += hatHeight / transform.localScale.y;
             controller.center += new Vector3(0, (hatHeight/2) / transform.localScale.y, 0);
         }
         else
         {
-            if (hats.Count == 0)
-            {
-                controller.height -= hatOffset / transform.localScale.y;
-            }
+            //if (hats.Count == 0)
+            //{
+            //    controller.height -= hatOffset / transform.localScale.y;
+            //}
             controller.height -= hatHeight / transform.localScale.y;
             controller.center -= new Vector3(0, (hatHeight / 2) / transform.localScale.y, 0);
         }
@@ -61,7 +60,7 @@ public class HatController : MonoBehaviour
     {
         if(hats.Count > 0)
         { 
-            Debug.Log("Removing hat");
+            //Debug.Log("Removing hat");
             GameObject hat = hats.Pop();
             Destroy(hat);
             resizePlayer(false);

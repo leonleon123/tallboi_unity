@@ -24,7 +24,7 @@ public class HatPickup : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            
+            Debug.Log("Hat Pickup Player Collided");
             HatController hatController = other.GetComponent<HatController>();
             if (giveHat)
             {
