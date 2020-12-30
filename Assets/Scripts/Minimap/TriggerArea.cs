@@ -8,8 +8,11 @@ public class TriggerArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered");
-        EventListener.current.RoomTriggerEnter(id);
+        if (other.tag == "Player")
+        {
+            Debug.Log("Entered");
+            EventListener.current.RoomTriggerEnter(id);
+        }
     }
 
     // If we want to RenderOff

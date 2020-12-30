@@ -8,6 +8,8 @@ public class LeverThink : MonoBehaviour
     Animator anim;
     public float speed = 0.05f;
     public float moveDistance = 0;
+    public GameObject minimapWall;
+    public GameObject minimapWall2;
     [HideInInspector]
     public bool pulled
     {
@@ -21,9 +23,9 @@ public class LeverThink : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        pulled = false;
+        pulled = false;     
 
-        for(int i = 0; i < transform.parent.childCount;i++)
+        for (int i = 0; i < transform.parent.childCount;i++)
         {
             Transform child = transform.parent.GetChild(i);
             if(child.CompareTag("Door"))
@@ -58,7 +60,8 @@ public class LeverThink : MonoBehaviour
             anim.Play("Pull");
             pulled = true;
             OpenDoor();
-            
+            minimapWall.SetActive(false);
+            minimapWall2.SetActive(true);
         }
     }
 

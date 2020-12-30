@@ -7,6 +7,7 @@ public class HatPickup : MonoBehaviour
 
     public bool giveHat = true;
     public float rotationSpeed = 100.0f;
+    public GameObject icon;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class HatPickup : MonoBehaviour
                 hatController.addHat();
                 hatController.deactivatedPickups.Add(gameObject);
                 gameObject.SetActive(false);
+                icon.SetActive(false);
             }
             else
             {

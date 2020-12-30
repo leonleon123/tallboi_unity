@@ -6,6 +6,8 @@ public class MinimapController : MonoBehaviour
 {
 
     public int id;
+    public Camera cam;
+    public LayerMask layer;
 
     void Start()
     {
@@ -20,7 +22,11 @@ public class MinimapController : MonoBehaviour
             Renderer[] rs = GetComponentsInChildren<Renderer>();
             foreach (Renderer r in rs)
                 r.enabled = true;
+
+            if (cam != null)
+                cam.cullingMask = layer;
         }
+        
     }
 
     // if for some reason we want to renderOff

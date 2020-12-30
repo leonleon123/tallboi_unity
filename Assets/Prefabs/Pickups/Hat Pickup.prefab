@@ -123,4 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45735365eebab674c890a3bb9fc511c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  giveHat: 1
   rotationSpeed: 100
+  icon: {fileID: 7732997143793834249, guid: ca1d514fde686ec4e9a125de1f4e677c, type: 3}
