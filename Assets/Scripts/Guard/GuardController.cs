@@ -5,6 +5,7 @@ using UnityEngine;
 public class GuardController : MonoBehaviour
 {
     private GameObject[] guards;
+    public int activateDistance = 3;
     PlayerControls controls;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class GuardController : MonoBehaviour
             {
                 //Debug.Log(Vector3.Distance(gameObject.transform.position, lever.transform.position));
                 //Debug.Log(Vector3.Distance(gameObject.transform.position, guard.transform.position));
-                if (Vector3.Distance(gameObject.transform.position, guard.transform.position) < 3)
+                if (Vector3.Distance(gameObject.transform.position, guard.transform.position) < activateDistance)
                 {
 
                     //bool requestDistract = Input.GetKeyDown(controls.activateKey);
