@@ -26,7 +26,6 @@ public class GuardController : MonoBehaviour
                 //Debug.Log(Vector3.Distance(gameObject.transform.position, guard.transform.position));
                 if (Vector3.Distance(gameObject.transform.position, guard.transform.position) < activateDistance)
                 {
-
                     //bool requestDistract = Input.GetKeyDown(controls.activateKey);
                     HatController hatController = gameObject.GetComponent<HatController>();
                     GuardThink guardThink = guard.GetComponent<GuardThink>();

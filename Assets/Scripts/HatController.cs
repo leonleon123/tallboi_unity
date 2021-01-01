@@ -71,6 +71,7 @@ public class HatController : MonoBehaviour
 
     public void removeAllHats()
     {
+        Debug.Log("Removing all hats");
         while(hats.Count > 0)
         {
             removeHat();

@@ -26,19 +26,6 @@ public class LeverThink : MonoBehaviour
         anim = GetComponent<Animator>();
         pulled = false;     
 
-
-        for (int i = 0; i < transform.parent.childCount;i++)
-        {
-            Transform child = transform.parent.GetChild(i);
-            if(child.CompareTag("Door"))
-            {
-                door = child.gameObject;
-                doorSpawnLoc = new Vector3(door.transform.position.x,door.transform.position.y,door.transform.position.z);
-                if (moveDistance == 0)
-                    moveDistance = door.transform.localScale.y;
-            }
-        }
-
     }
 
     // Update is called once per frame

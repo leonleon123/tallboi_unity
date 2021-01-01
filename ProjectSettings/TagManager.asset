@@ -14,6 +14,8 @@ TagManager:
   - AnimationRig
   - Path
   - SecurityGuard
+  - Textbox
+  - Textbox trigger
   layers:
   - Default
   - TransparentFX
@@ -27,8 +29,6 @@ TagManager:
   - Minimap1
   - Minimap
   - Glow
-  - 
-  - 
   - 
   - 
   - 

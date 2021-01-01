@@ -65,23 +65,28 @@ public class PlayerMovement : MonoBehaviour
             v = Input.GetAxis("Vertical");
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if(h != 0 || v < 0)
         {
-            animator.SetBool("isWalking", true);
+            animator.SetBool("isWalkingBackwards", true);
+        }
+        else
+        {
+            animator.SetBool("isWalkingBackwards", false);
         }
 
-        if (Input.GetKeyUp(KeyCode.W))
+        if (v > 0)
+        {
+            animator.SetBool("isWalking", true);
+            animator.SetBool("isWalkingBackwards", false);
+        }
+        else if (v == 0)
         {
             animator.SetBool("isWalking", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        if(frozen)
         {
-            animator.SetBool("isWalkingBackwards", true);
-        }
-
-        if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
-        {
+            animator.SetBool("isWalking", false);
             animator.SetBool("isWalkingBackwards", false);
         }
 
