@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Rotate(Vector3.up * mouseX * mouseSensitivity * Time.deltaTime);
 
-        if (requestJump && characterController.isGrounded)
+        if (requestJump && characterController.isGrounded && !frozen)
         {
             jumpStartTime = Time.time;
             jumping = true;

@@ -5,16 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GuardThink : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    public float mRaycastRadius;  // width of our line of sight (x-axis and y-axis)
-    public float mTargetDetectionDistance;  // depth of our line of sight (z-axis)
-
-    //private RaycastHit _mHitInfo;   // allocating memory for the raycasthit
-    // to avoid Garbage
-    //private bool hasDetectedPlayer = false;   // tracking whether the player
-    // is detected to change color in gizmos
-
     public bool moving = false;
     public float speed = 1.0f;
 
@@ -31,6 +21,8 @@ public class GuardThink : MonoBehaviour
     {
         moving = false;
         gotHatted = true;
+        Animator anim = gameObject.GetComponent<Animator>();
+        anim.Play("Stop");
     }
 
     public void PlayerNoticed()
@@ -43,34 +35,6 @@ public class GuardThink : MonoBehaviour
         }
     }
 
-    //private void CheckForTargetInLineOfSight()
-    //{
-    //    if (!hasDetectedPlayer && !gotHatted)
-    //    {
-    //        bool temp = Physics.SphereCast(transform.position, mRaycastRadius, transform.forward, out _mHitInfo, mTargetDetectionDistance);
-
-    //        if (temp)
-    //        {
-    //            if (_mHitInfo.transform.CompareTag("Player"))
-    //            {
-    //                Debug.Log("Detected Player");
-    //                hasDetectedPlayer = true;
-    //                moving = false;
-    //                charging = true;
-    //                chargeTime = 0;
-    //                playerMovement.Freeze();
-    //            }
-    //            else
-    //            {
-    //                //Debug.Log("No Player detected");
-    //            }
-
-    //        }
-    //        else
-    //        {
-    //        }
-    //    }
-    //}
     void Start()
     {
         GameObject[] allpaths = GameObject.FindGameObjectsWithTag("Path");
@@ -105,23 +69,6 @@ public class GuardThink : MonoBehaviour
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
     }
-
-    //private void OnDrawGizmos()
-    //{
-    //    if (hasDetectedPlayer || gotHatted)
-    //    {
-    //        Gizmos.color = Color.red;
-    //    }
-    //    else
-    //    {
-    //        Gizmos.color = Color.green;
-    //    }
-
-    //    Gizmos.matrix = transform.localToWorldMatrix;
-
-    //    Gizmos.DrawCube(new Vector3(0f, 0f, mTargetDetectionDistance / 2f), new Vector3(mRaycastRadius, mRaycastRadius, mTargetDetectionDistance));
-    //}
-
 
     private void OnTriggerEnter(Collider other)
     {

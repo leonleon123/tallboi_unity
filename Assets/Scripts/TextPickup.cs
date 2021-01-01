@@ -5,12 +5,16 @@ using TMPro;
 
 public class TextPickup : MonoBehaviour
 {
+    public int id = 0;
     [TextArea]
     public string text = "I am Error";
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(HelperClass.pickedTexts.Contains(id))
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -27,6 +31,7 @@ public class TextPickup : MonoBehaviour
             //HatController hatController = other.GetComponent<HatController>();
             TextboxController textboxController = other.GetComponent<TextboxController>();
             textboxController.activateTextbox(text);
+            HelperClass.pickedTexts.Add(id);
             gameObject.SetActive(false);
         }
     }

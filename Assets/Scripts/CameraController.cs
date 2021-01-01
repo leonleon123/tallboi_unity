@@ -19,10 +19,13 @@ public class CameraController : MonoBehaviour
         var angles = transform.localEulerAngles;
         angles.z = 0;
         var angle = transform.localEulerAngles.x;
-        if (angle > 180 && angle < 320)
-            angles.x = 320;
-        else if (angle < 180 && angle > 60)
+        //Debug.Log(angle);
+        if (angle > 60 && angle < 180)
             angles.x = 60;
+        else if (angle < 345 && angle > 180)
+            angles.x = 345;
+        angles.y = 0;
+        angles.z = 0;
 
         transform.localEulerAngles = angles;
     }

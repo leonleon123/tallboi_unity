@@ -103,8 +103,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6346558222797428647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58586b920eebf604f8d8b2bb08ad9b45, type: 3}
+  m_Script: {fileID: 11500000, guid: 48c6c9096d7539e478fd064c5c3db4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: Welcome to the tutorial! To move around, use WASD keys. To rotate the camera,
-    use your mouse!
+  text: I am Error
