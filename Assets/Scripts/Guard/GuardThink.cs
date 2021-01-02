@@ -37,6 +37,10 @@ public class GuardThink : MonoBehaviour
 
     void Start()
     {
+        if (!moving) {
+            Animator anim = gameObject.GetComponent<Animator>();
+            anim.Play("Stop");
+        }
         GameObject[] allpaths = GameObject.FindGameObjectsWithTag("Path");
         for(int i = 0; i < allpaths.Length;i++)
         {
