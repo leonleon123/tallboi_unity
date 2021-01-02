@@ -36,23 +36,18 @@ public class HatController : MonoBehaviour
 
     private void resizePlayer(bool add)
     {
-        if(add)
-        { 
-            //if(hats.Count == 1)
-            //{
-            //    controller.height += hatOffset / transform.localScale.y;
-            //}
-            controller.height += hatHeight / transform.localScale.y;
-            controller.center += new Vector3(0, (hatHeight/2) / transform.localScale.y, 0);
-        }
-        else
+        if (controller != null)
         {
-            //if (hats.Count == 0)
-            //{
-            //    controller.height -= hatOffset / transform.localScale.y;
-            //}
-            controller.height -= hatHeight / transform.localScale.y;
-            controller.center -= new Vector3(0, (hatHeight / 2) / transform.localScale.y, 0);
+            if(add)
+            { 
+                controller.height += hatHeight / transform.localScale.y;
+                controller.center += new Vector3(0, (hatHeight/2) / transform.localScale.y, 0);
+            }
+            else
+            {
+                controller.height -= hatHeight / transform.localScale.y;
+                controller.center -= new Vector3(0, (hatHeight / 2) / transform.localScale.y, 0);
+            }
         }
     }
 
@@ -89,13 +84,16 @@ public class HatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(controls.Debug_addHat))
+        if(controls != null)
         {
-            addHat();
-        }
-        else if (Input.GetKeyDown(controls.Debug_removeHat))
-        {
-            removeHat();
+            if(Input.GetKeyDown(controls.Debug_addHat))
+            {
+                addHat();
+            }
+            else if (Input.GetKeyDown(controls.Debug_removeHat))
+            {
+                removeHat();
+            }
         }
     }
 }
