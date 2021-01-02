@@ -64,7 +64,7 @@ public class GuardThink : MonoBehaviour
     {
         if(moving)
         {
-            Debug.Log(index);
+            //Debug.Log(index);
             transform.LookAt(path[index].transform.position);
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
