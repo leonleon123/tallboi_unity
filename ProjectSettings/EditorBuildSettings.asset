@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Egypt.unity
     guid: 4392fa4e8e632804ca385eabe594b6ed
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 4303fed4edf2d6e41b3e0d818f3f5097
+  - enabled: 1
+    path: Assets/Scenes/Rome.unity
+    guid: 172bdcb7885a084438d9c0e5cdf97ed4
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: df6fe10da72517a4c962a7320779bb84
+  - enabled: 1
+    path: Assets/Scenes/MatejTestScene.unity
+    guid: b700e22207d32874d86b46bb5a58bf0e
   m_configObjects: {}
