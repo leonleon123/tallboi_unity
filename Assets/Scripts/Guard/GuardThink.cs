@@ -14,6 +14,11 @@ public class GuardThink : MonoBehaviour
     private bool charging = false;
     private float chargeTime = 0;
     PlayerMovement playerMovement;
+    GameObject player;
+    public GameObject alert;
+    public GameObject hatObject;
+    public GameObject head;
+    public float fixY = 1.43f;
     [HideInInspector]
     public bool gotHatted = false;
 
@@ -22,16 +27,29 @@ public class GuardThink : MonoBehaviour
         moving = false;
         gotHatted = true;
         Animator anim = gameObject.GetComponent<Animator>();
-        anim.Play("Stop");
+        anim.Play("StopAll");
+
+        GameObject hat = Instantiate(hatObject);
+        hat.SetActive(true);
+        hat.transform.SetParent(head.transform);
+        hat.transform.localPosition = new Vector3(-0.006f, -0.009f, -0.007f);
+        hat.transform.localEulerAngles = new Vector3(90, 0, 0);
+        hat.transform.localScale = new Vector3(0.017f, 0.007f, 0.017f);
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y+fixY, transform.localPosition.z);
     }
 
     public void PlayerNoticed()
     {
         if (!gotHatted)
         {
+            moving = false;
+            transform.LookAt(player.transform.position);
             charging = true;
             chargeTime = 0;
             playerMovement.Freeze();
+            Animator anim = gameObject.GetComponent<Animator>();
+            anim.Play("Stop");
+            alert.SetActive(true);
         }
     }
 
@@ -48,6 +66,8 @@ public class GuardThink : MonoBehaviour
                 path.Add(allpaths[i]);
         }
         playerMovement = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerMovement>();
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
+        alert.SetActive(false);
     }
 
     // Update is called once per frame

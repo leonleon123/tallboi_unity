@@ -46,6 +46,12 @@ public class TextboxController : MonoBehaviour
 
             if(!waitForInput)
             { 
+                if(pressedF)
+                {
+                    tmp_text.text = goalText;
+                    i = 99999;
+                    return;
+                }
                 timeAccumulator += Time.deltaTime;
                 if(timeAccumulator > drawTime)
                 {

@@ -7,18 +7,20 @@ public class GuardController : MonoBehaviour
     private GameObject[] guards;
     public int activateDistance = 3;
     PlayerControls controls;
+    PlayerMovement mov;
     // Start is called before the first frame update
     void Start()
     {
         guards = GameObject.FindGameObjectsWithTag("SecurityGuard");
         controls = gameObject.GetComponent<PlayerControls>();
+        mov = gameObject.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
         bool requestDistract = Input.GetKeyDown(controls.activateKey);
-        if (requestDistract)
+        if (requestDistract && !mov.isFrozen())
         { 
             foreach (GameObject guard in guards)
             {

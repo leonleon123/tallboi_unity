@@ -1885,10 +1885,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3f375c1e8d55649ad392e861b945ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mRaycastRadius: 0.83
-  mTargetDetectionDistance: 5.01
   moving: 0
   speed: 4
+  alert: {fileID: 0}
+  hatObject: {fileID: 0}
+  head: {fileID: 0}
+  fixY: 1.43
   gotHatted: 0
 --- !u!1 &5565742315517750173
 GameObject:
@@ -2266,10 +2268,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3f375c1e8d55649ad392e861b945ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mRaycastRadius: 2.95
-  mTargetDetectionDistance: 14.66
   moving: 0
   speed: 4
+  alert: {fileID: 657530134676206204, guid: 33f4e55257083b2419fb2815d1e8661c, type: 3}
+  hatObject: {fileID: 7632602907344774223, guid: 44fc966c6e0fef84a9c136af5492e27d,
+    type: 3}
+  head: {fileID: 2468751386144128212}
+  fixY: 1.43
   gotHatted: 0
 --- !u!95 &2713029411928058425
 Animator:

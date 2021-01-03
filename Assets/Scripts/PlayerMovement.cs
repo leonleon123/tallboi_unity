@@ -50,6 +50,11 @@ public class PlayerMovement : MonoBehaviour
         frozen = false;
     }
 
+    public bool isFrozen()
+    {
+        return frozen;
+    }
+
     void Update()
     {
         float h, v;
