@@ -12,7 +12,7 @@ public class HatController : MonoBehaviour
     public float hatOffset = 0.6f;
 
     [HideInInspector]
-    public Stack<GameObject> hats;
+    public Stack<GameObject> hats = new Stack<GameObject>();
     [HideInInspector]
     public List<GameObject> deactivatedPickups;
     public GameObject head;
@@ -78,7 +78,6 @@ public class HatController : MonoBehaviour
         hats = new Stack<GameObject>();
         controls = gameObject.GetComponent<PlayerControls>();
         controller = GetComponent<CharacterController>();
-        
     }
 
     // Update is called once per frame

@@ -1100,6 +1100,7 @@ GameObject:
   - component: {fileID: 1556656519}
   - component: {fileID: 2446771911293051317}
   - component: {fileID: 5341735019467786791}
+  - component: {fileID: 4836240265180906178}
   m_Layer: 0
   m_Name: tallboi
   m_TagString: Player
@@ -1197,6 +1198,7 @@ MonoBehaviour:
   jumpKey: 32
   Debug_addHat: 111
   Debug_removeHat: 112
+  menuKey: 27
 --- !u!114 &8258716190867444904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1257,3 +1259,17 @@ MonoBehaviour:
   drawTime: 0.03
   tmp_text: {fileID: 0}
   PressFToClose: {fileID: 0}
+--- !u!114 &4836240265180906178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105631176489124695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1619584651858914ba9d93fc999f0c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenu: {fileID: 0}
+  scene: {fileID: 0}

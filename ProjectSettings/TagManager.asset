@@ -16,6 +16,7 @@ TagManager:
   - SecurityGuard
   - Textbox
   - Textbox trigger
+  - Audio
   layers:
   - Default
   - TransparentFX

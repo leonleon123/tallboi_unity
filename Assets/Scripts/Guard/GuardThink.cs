@@ -32,9 +32,9 @@ public class GuardThink : MonoBehaviour
         GameObject hat = Instantiate(hatObject);
         hat.SetActive(true);
         hat.transform.SetParent(head.transform);
-        hat.transform.localPosition = new Vector3(-0.006f, -0.01f, 0.013f);
-        hat.transform.localEulerAngles = new Vector3(90, 0, 0);
-        hat.transform.localScale = new Vector3(0.02f, 0.007f, 0.02f);
+        hat.transform.localPosition = new Vector3(-0.0007837286f, 0.003250502f, -0.0001185059f);
+        hat.transform.localEulerAngles = new Vector3(244.938f, 0.4379883f, -0.6339722f);
+        hat.transform.localScale = new Vector3(0.017f, 0.006999999f, 0.017f);
         //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y+fixY, transform.localPosition.z);
     }
 
@@ -42,6 +42,7 @@ public class GuardThink : MonoBehaviour
     {
         if (!gotHatted)
         {
+            AudioSource.PlayClipAtPoint(GetComponent<AudioSource>().clip, transform.position);
             moving = false;
             transform.LookAt(player.transform.position);
             charging = true;
