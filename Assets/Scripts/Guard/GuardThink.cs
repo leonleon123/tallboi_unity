@@ -27,15 +27,15 @@ public class GuardThink : MonoBehaviour
         moving = false;
         gotHatted = true;
         Animator anim = gameObject.GetComponent<Animator>();
-        anim.Play("StopAll");
+        //anim.Play("StopAll");
 
         GameObject hat = Instantiate(hatObject);
         hat.SetActive(true);
         hat.transform.SetParent(head.transform);
-        hat.transform.localPosition = new Vector3(-0.006f, -0.009f, -0.007f);
+        hat.transform.localPosition = new Vector3(-0.006f, -0.01f, 0.013f);
         hat.transform.localEulerAngles = new Vector3(90, 0, 0);
-        hat.transform.localScale = new Vector3(0.017f, 0.007f, 0.017f);
-        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y+fixY, transform.localPosition.z);
+        hat.transform.localScale = new Vector3(0.02f, 0.007f, 0.02f);
+        //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y+fixY, transform.localPosition.z);
     }
 
     public void PlayerNoticed()
