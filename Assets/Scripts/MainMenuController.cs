@@ -17,12 +17,15 @@ public class MainMenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(playerControls.menuKey))
+        if (Input.GetKeyDown(playerControls.menuKey) && mainMenu != null && scene != null)
         {
             Cursor.lockState = CursorLockMode.None;
             HelperClass.mainMenu = mainMenu;
             HelperClass.scene = scene;
             mainMenu.SetActive(true);
+            mainMenu.GetComponent<CanvasPointer>().canvas.GetComponent<MainMenu>().ingameSetup();
+            //MainMenu mm = mainMenu.GetComponent<MainMenu>();
+            //mm.ingameSetup();
             scene.SetActive(false);
         }
     }

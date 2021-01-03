@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; // Required when Using UI elements.
 
 
 public class MainMenu : MonoBehaviour
@@ -9,12 +10,37 @@ public class MainMenu : MonoBehaviour
 
     public GameObject defaultGroup;
     public GameObject levelSelectGroup;
+    public GameObject settingsGroup;
+    public GameObject ingameGroup;
+    public Slider musicSlider;
+    public Slider sfxSlider;
+    bool fromMain = true;
 
     // Start is called before the first frame update
     void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<HatController>().addHat();
+        musicSlider.onValueChanged.AddListener(delegate { MusicValueChangeCheck(); });
+        sfxSlider.onValueChanged.AddListener(delegate { SFXValueChangeCheck(); });
+        HelperClass.volumeMusic = musicSlider.value;
+        HelperClass.volumeMusic = sfxSlider.value;
+    }
+
+    public void ingameSetup()
+    {
+        ingameGroup.SetActive(true);
+        defaultGroup.SetActive(false);
+    }
+
+    void MusicValueChangeCheck()
+    {
+        HelperClass.volumeMusic = musicSlider.value;
+    }
+
+    void SFXValueChangeCheck()
+    {
+        HelperClass.volumeMusic = sfxSlider.value;
     }
 
     // Update is called once per frame
@@ -47,6 +73,12 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void QuitToMenu()
+    {
+        Destroy(GameObject.FindGameObjectWithTag("Audio"));
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+    }
+
     public void Vikings()
     {
         Destroy(GameObject.FindGameObjectWithTag("Audio"));
@@ -61,13 +93,42 @@ public class MainMenu : MonoBehaviour
 
     public void LevelSelect()
     {
+        if (defaultGroup.activeSelf)
+            fromMain = true;
+        else
+            fromMain = false;
         defaultGroup.SetActive(false);
         levelSelectGroup.SetActive(true);
     }
 
     public void Back()
     {
-        defaultGroup.SetActive(true);
+        if (fromMain)
+            defaultGroup.SetActive(true);
+        else
+            ingameGroup.SetActive(true);
+        settingsGroup.SetActive(false);
         levelSelectGroup.SetActive(false);
+    }
+
+    public void Settings()
+    {
+        if (defaultGroup.activeSelf)
+            fromMain = true;
+        else
+            fromMain = false;
+        settingsGroup.SetActive(true);
+        defaultGroup.SetActive(false);
+        ingameGroup.SetActive(false);
+    }
+
+    public void Continue()
+    {
+        if(HelperClass.scene != null)
+        { 
+            Cursor.lockState = CursorLockMode.Locked;
+            HelperClass.scene.SetActive(true);
+            HelperClass.mainMenu.SetActive(false);
+        }
     }
 }

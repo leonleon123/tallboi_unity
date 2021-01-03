@@ -16,7 +16,8 @@ public class AudioThink : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<AudioSource>().mute = !HelperClass.playMusic;
+        GetComponent<AudioSource>().volume = HelperClass.volumeMusic / 100.0f;
+        //Debug.Log(HelperClass.volumeMusic / 100.0f);
     }
 
     private void Awake()
