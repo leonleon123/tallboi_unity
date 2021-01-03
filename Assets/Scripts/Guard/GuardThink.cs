@@ -27,7 +27,7 @@ public class GuardThink : MonoBehaviour
         moving = false;
         gotHatted = true;
         Animator anim = gameObject.GetComponent<Animator>();
-        //anim.Play("StopAll");
+        anim.Play("Stop");
 
         GameObject hat = Instantiate(hatObject);
         hat.SetActive(true);
