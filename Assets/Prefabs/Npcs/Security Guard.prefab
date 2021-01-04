@@ -1892,6 +1892,7 @@ MonoBehaviour:
   head: {fileID: 0}
   fixY: 1.43
   gotHatted: 0
+  oof: {fileID: 0}
 --- !u!1 &5565742315517750173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,6 +2375,7 @@ MonoBehaviour:
   head: {fileID: 1503338224824808654}
   fixY: 1.43
   gotHatted: 0
+  oof: {fileID: 8300000, guid: 2c46f7c65edf21c4cb189df96700ff91, type: 3}
 --- !u!95 &2713029411928058425
 Animator:
   serializedVersion: 3

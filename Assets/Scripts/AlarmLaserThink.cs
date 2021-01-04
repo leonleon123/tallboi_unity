@@ -54,6 +54,8 @@ public class AlarmLaserThink : MonoBehaviour
         triggered = true;
         activated = true;
         playerMovement.Freeze();
+        AudioSource audio = GetComponent<AudioSource>();
+        AudioSource.PlayClipAtPoint(audio.clip, transform.position, HelperClass.volumeSFX / 100.0f);
         //todo: lock camera, maybe display a text, etc...
     }
 

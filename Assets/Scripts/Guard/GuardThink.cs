@@ -21,6 +21,7 @@ public class GuardThink : MonoBehaviour
     public float fixY = 1.43f;
     [HideInInspector]
     public bool gotHatted = false;
+    public AudioClip oof;
 
     public void HatOn()
     {
@@ -28,6 +29,9 @@ public class GuardThink : MonoBehaviour
         gotHatted = true;
         Animator anim = gameObject.GetComponent<Animator>();
         anim.Play("Stop");
+
+        GetComponent<AudioSource>().clip = oof;
+        AudioSource.PlayClipAtPoint(GetComponent<AudioSource>().clip, transform.position, HelperClass.volumeSFX / 100.0f);
 
         GameObject hat = Instantiate(hatObject);
         hat.SetActive(true);
@@ -42,9 +46,14 @@ public class GuardThink : MonoBehaviour
     {
         if (!gotHatted)
         {
-            AudioSource.PlayClipAtPoint(GetComponent<AudioSource>().clip, transform.position);
+            
+            AudioSource.PlayClipAtPoint(GetComponent<AudioSource>().clip, transform.position,HelperClass.volumeSFX/100.0f);
             moving = false;
             transform.LookAt(player.transform.position);
+            var angles = transform.localEulerAngles;
+            angles.x = 0;
+            angles.z = 0;
+            transform.localEulerAngles = angles;
             charging = true;
             chargeTime = 0;
             playerMovement.Freeze();

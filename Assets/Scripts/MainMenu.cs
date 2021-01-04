@@ -23,8 +23,10 @@ public class MainMenu : MonoBehaviour
         player.GetComponent<HatController>().addHat();
         musicSlider.onValueChanged.AddListener(delegate { MusicValueChangeCheck(); });
         sfxSlider.onValueChanged.AddListener(delegate { SFXValueChangeCheck(); });
-        HelperClass.volumeMusic = musicSlider.value;
-        HelperClass.volumeMusic = sfxSlider.value;
+        //HelperClass.volumeMusic = musicSlider.value;
+        //HelperClass.volumeSFX = sfxSlider.value;
+        musicSlider.value = HelperClass.volumeMusic;
+        sfxSlider.value = HelperClass.volumeSFX;
     }
 
     public void ingameSetup()
@@ -40,17 +42,15 @@ public class MainMenu : MonoBehaviour
 
     void SFXValueChangeCheck()
     {
-        HelperClass.volumeMusic = sfxSlider.value;
+        HelperClass.volumeSFX = sfxSlider.value;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && HelperClass.scene != null)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            HelperClass.scene.SetActive(true);
-            HelperClass.mainMenu.SetActive(false);
+            Continue();
         }
     }
 
@@ -127,6 +127,12 @@ public class MainMenu : MonoBehaviour
         if(HelperClass.scene != null)
         { 
             Cursor.lockState = CursorLockMode.Locked;
+            if (fromMain)
+                defaultGroup.SetActive(true);
+            else
+                ingameGroup.SetActive(true);
+            settingsGroup.SetActive(false);
+            levelSelectGroup.SetActive(false);
             HelperClass.scene.SetActive(true);
             HelperClass.mainMenu.SetActive(false);
         }

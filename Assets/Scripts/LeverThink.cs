@@ -40,10 +40,13 @@ public class LeverThink : MonoBehaviour
         {
             //Debug.Log("Called activate");
             anim.Play("Pull");
+            AudioSource audio = GetComponent<AudioSource>();
+            AudioSource.PlayClipAtPoint(audio.clip, transform.position, HelperClass.volumeSFX / 100.0f);
             pulled = true;
             OpenDoor();
             minimapWall.SetActive(false);
             minimapWall2.SetActive(true);
+            
         }
     }
 

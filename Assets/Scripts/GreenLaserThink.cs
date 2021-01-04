@@ -43,6 +43,8 @@ public class GreenLaserThink : MonoBehaviour
 
     void OpenDoor()
     {
+        AudioSource audio = GetComponent<AudioSource>();
+        AudioSource.PlayClipAtPoint(audio.clip, transform.position, HelperClass.volumeSFX / 100.0f);
         Door d = door.GetComponent<Door>();
         d.Open();
     }

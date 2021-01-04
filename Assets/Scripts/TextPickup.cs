@@ -32,6 +32,11 @@ public class TextPickup : MonoBehaviour
             TextboxController textboxController = other.GetComponent<TextboxController>();
             textboxController.activateTextbox(text);
             HelperClass.pickedTexts.Add(id);
+            if(Time.timeSinceLevelLoad > 1)
+            { 
+                AudioSource audio = GetComponent<AudioSource>();
+                AudioSource.PlayClipAtPoint(audio.clip, transform.position, HelperClass.volumeSFX / 100.0f);
+            }
             gameObject.SetActive(false);
         }
     }
