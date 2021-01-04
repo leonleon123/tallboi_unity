@@ -19,6 +19,10 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 gravity;
     [HideInInspector]
     public Vector3 spawnPoint;
+    public AudioClip step1;
+    public AudioClip step2;
+    public AudioClip step3;
+    public AudioClip step4;
 
     float jumpStartTime = 0;
     float jump = 0;
@@ -28,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerControls controls;
 
     Animator animator;
-    
+    AudioSource audioc;
 
     void Start()
     {
@@ -37,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         controls = GetComponent<PlayerControls>();
         animator = GetComponent<Animator>();
-        
+        audioc = GetComponent<AudioSource>();
     }
 
     public void Freeze()
@@ -53,6 +57,39 @@ public class PlayerMovement : MonoBehaviour
     public bool isFrozen()
     {
         return frozen;
+    }
+
+    public void PlayFootstep()
+    {
+        if (!audioc.isPlaying && characterController.isGrounded && !frozen)
+        {
+            int rand = Random.Range(0, 4);
+            switch (rand)
+            {
+                case 0:
+                {
+                    audioc.clip = step1;
+                    break;
+                }
+                case 1:
+                {
+                    audioc.clip = step2;
+                    break;
+                }
+                case 2:
+                {
+                    audioc.clip = step3;
+                    break;
+                }
+                case 3:
+                {
+                    audioc.clip = step4;
+                    break;
+                }
+            }
+            audioc.volume = HelperClass.volumeSFX / 100.0f / 5;
+            audioc.Play();
+        }
     }
 
     void Update()
@@ -73,6 +110,8 @@ public class PlayerMovement : MonoBehaviour
         if(h != 0 || v < 0)
         {
             animator.SetBool("isWalkingBackwards", true);
+            PlayFootstep();
+            
         }
         else
         {
@@ -83,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("isWalking", true);
             animator.SetBool("isWalkingBackwards", false);
+            PlayFootstep();
         }
         else if (v == 0)
         {
