@@ -63,7 +63,7 @@ public class AlarmLaserThink : MonoBehaviour
     {
         if (!activated && !charging)
         {
-            if (other.CompareTag("Player") || other.CompareTag("Hat"))
+            if (other.CompareTag("Player") || other.CompareTag("Hat") && !playerMovement.isFrozen())
             {
 
                 charging = true;

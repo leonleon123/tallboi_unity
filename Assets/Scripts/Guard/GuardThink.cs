@@ -48,7 +48,7 @@ public class GuardThink : MonoBehaviour
         if (!gotHatted)
         {
             
-            AudioSource.PlayClipAtPoint(GetComponent<AudioSource>().clip, transform.position,HelperClass.volumeSFX/100.0f);
+            AudioSource.PlayClipAtPoint(GetComponent<AudioSource>().clip, player.transform.position,HelperClass.volumeSFX/100.0f);
             moving = false;
             transform.LookAt(player.transform.position);
             var angles = transform.localEulerAngles;
