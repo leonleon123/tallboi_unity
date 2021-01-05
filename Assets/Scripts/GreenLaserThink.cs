@@ -13,6 +13,7 @@ public class GreenLaserThink : MonoBehaviour
     public bool takeHats = false;
     public GameObject door;
     public Material activatedMaterial;
+    public GameObject minimapWall;
 
 
     bool charging = false;
@@ -77,6 +78,8 @@ public class GreenLaserThink : MonoBehaviour
     {
         Debug.Log("Activating green laser");
         Destroy(gameObject);
+        if (minimapWall != null) 
+                minimapWall.SetActive(false);
         OpenDoor();
         if (takeHats)
             hatController.removeAllHats();

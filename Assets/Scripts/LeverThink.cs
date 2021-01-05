@@ -45,9 +45,12 @@ public class LeverThink : MonoBehaviour
             AudioSource.PlayClipAtPoint(audio.clip, transform.position, HelperClass.volumeSFX / 100.0f);
             pulled = true;
             OpenDoor();
-            if (minimapWall != null) minimapWall.SetActive(false);
-            if (minimapWall2 != null) minimapWall2.SetActive(true);
-            if (minimapWall3 != null) minimapWall3.SetActive(false);
+            if (minimapWall != null) 
+                minimapWall.SetActive(false);
+            if (minimapWall2 != null) 
+                minimapWall2.SetActive(true);
+            if (minimapWall3 != null) 
+                minimapWall3.SetActive(false);
 
         }
     }
