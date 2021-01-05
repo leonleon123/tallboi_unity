@@ -10,6 +10,7 @@ public class LeverThink : MonoBehaviour
 
     public GameObject minimapWall;
     public GameObject minimapWall2;
+    public GameObject minimapWall3;
 
     public GameObject door;
 
@@ -44,9 +45,10 @@ public class LeverThink : MonoBehaviour
             AudioSource.PlayClipAtPoint(audio.clip, transform.position, HelperClass.volumeSFX / 100.0f);
             pulled = true;
             OpenDoor();
-            minimapWall.SetActive(false);
-            minimapWall2.SetActive(true);
-            
+            if (minimapWall != null) minimapWall.SetActive(false);
+            if (minimapWall2 != null) minimapWall2.SetActive(true);
+            if (minimapWall3 != null) minimapWall3.SetActive(false);
+
         }
     }
 

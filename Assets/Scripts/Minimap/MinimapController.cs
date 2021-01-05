@@ -8,6 +8,7 @@ public class MinimapController : MonoBehaviour
     public int id;
     public Camera cam;
     public LayerMask layer;
+    public GameObject secGuard;
 
     void Start()
     {
@@ -25,6 +26,9 @@ public class MinimapController : MonoBehaviour
 
             if (cam != null)
                 cam.cullingMask = layer;
+
+            if (secGuard != null)
+                secGuard.SetActive(true);
         }
         
     }

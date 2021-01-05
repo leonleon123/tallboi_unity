@@ -22,6 +22,7 @@ public class GuardThink : MonoBehaviour
     [HideInInspector]
     public bool gotHatted = false;
     public AudioClip oof;
+    private Animator animController;
 
     public void HatOn()
     {
@@ -65,6 +66,7 @@ public class GuardThink : MonoBehaviour
 
     void Start()
     {
+        animController = gameObject.GetComponent<Animator>();
         if (!moving) {
             Animator anim = gameObject.GetComponent<Animator>();
             anim.Play("Stop");
@@ -83,6 +85,11 @@ public class GuardThink : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!moving && animController.GetCurrentAnimatorStateInfo(0).IsName("Armature|Walk"))
+        {
+            Animator anim = gameObject.GetComponent<Animator>();
+            anim.Play("Stop");
+        }
         //CheckForTargetInLineOfSight();
         Move();
 
