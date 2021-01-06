@@ -82,7 +82,7 @@ public class MainMenu : MonoBehaviour
     public void Vikings()
     {
         Destroy(GameObject.FindGameObjectWithTag("Audio"));
-        SceneManager.LoadScene("MatejTestScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("Vikings", LoadSceneMode.Single);
     }
 
     public void Egypt()
