@@ -76,7 +76,7 @@ public class GreenLaserThink : MonoBehaviour
 
     void Activate()
     {
-        Debug.Log("Activating green laser");
+        //Debug.Log("Activating green laser");
         Destroy(gameObject);
         if (minimapWall != null) 
                 minimapWall.SetActive(false);

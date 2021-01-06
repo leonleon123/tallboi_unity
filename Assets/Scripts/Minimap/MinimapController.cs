@@ -19,7 +19,7 @@ public class MinimapController : MonoBehaviour
     private void RenderOn(int id) {
         if (id == this.id)
         {
-            Debug.Log("Drawing");
+            //Debug.Log("Drawing");
             Renderer[] rs = GetComponentsInChildren<Renderer>();
             foreach (Renderer r in rs)
                 r.enabled = true;
