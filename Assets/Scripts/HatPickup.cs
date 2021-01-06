@@ -27,10 +27,11 @@ public class HatPickup : MonoBehaviour
         {
             Debug.Log("Hat Pickup Player Collided");
             AudioSource audio = GetComponent<AudioSource>();
-            AudioSource.PlayClipAtPoint(audio.clip, transform.position,HelperClass.volumeSFX/100.0f);
+            
             HatController hatController = other.GetComponent<HatController>();
             if (giveHat)
             {
+                AudioSource.PlayClipAtPoint(audio.clip, transform.position, HelperClass.volumeSFX / 100.0f);
                 hatController.addHat();
                 hatController.deactivatedPickups.Add(gameObject);
                 gameObject.SetActive(false);
@@ -40,6 +41,7 @@ public class HatPickup : MonoBehaviour
             {
                 if (hatController.removeHat())
                 {
+                    AudioSource.PlayClipAtPoint(audio.clip, transform.position, HelperClass.volumeSFX / 100.0f);
                     hatController.deactivatedPickups.Add(gameObject);
                     gameObject.SetActive(false);
                     
