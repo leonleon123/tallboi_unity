@@ -4665,6 +4665,12 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!4 &292297913 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6346558222797428652, guid: 8c4789acb027e3446a043fc8d22c49f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 953716159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &302178303
 Mesh:
   m_ObjectHideFlags: 0
@@ -18702,6 +18708,100 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1001 &953716159
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1963814499}
+    m_Modifications:
+    - target: {fileID: 6346558222797428640, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: text
+      value: You can proceed to the next stage by pulling the exit lever.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428640, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428647, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_Name
+      value: TB pickup (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428647, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428647, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428652, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428652, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428652, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428652, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428652, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428652, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428652, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428652, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428652, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428652, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346558222797428652, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551801696913349971, guid: 8c4789acb027e3446a043fc8d22c49f3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8c4789acb027e3446a043fc8d22c49f3, type: 3}
 --- !u!1 &955123174
 GameObject:
   m_ObjectHideFlags: 0
@@ -36491,7 +36591,8 @@ PrefabInstance:
     - target: {fileID: 6346558222797428640, guid: 8c4789acb027e3446a043fc8d22c49f3,
         type: 3}
       propertyPath: text
-      value: You can pull the lever by pressing F. It will open a door.
+      value: You can pull the lever by pressing F. It will open a door or deactivate
+        lasers.
       objectReference: {fileID: 0}
     - target: {fileID: 6346558222797428640, guid: 8c4789acb027e3446a043fc8d22c49f3,
         type: 3}
@@ -43942,6 +44043,7 @@ Transform:
   - {fileID: 313492846}
   - {fileID: 1798188584}
   - {fileID: 1649997983}
+  - {fileID: 292297913}
   m_Father: {fileID: 559274236}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52083,8 +52185,9 @@ PrefabInstance:
     - target: {fileID: 6346558222797428640, guid: 8c4789acb027e3446a043fc8d22c49f3,
         type: 3}
       propertyPath: text
-      value: Welcome to tutorial! To move around, use WASD keys. Use your mouse to
-        control the camera.
+      value: 'Welcome to tutorial! To move around, use WASD keys. Use your mouse
+        to control the camera. You can access the in-game menu anytime by pressing
+        ESC. '
       objectReference: {fileID: 0}
     - target: {fileID: 6346558222797428642, guid: 8c4789acb027e3446a043fc8d22c49f3,
         type: 3}
