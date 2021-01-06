@@ -36,6 +36,7 @@ public class Exit : Door
         }
         if(time >= timeToExit)
         {
+            Cursor.lockState = CursorLockMode.None;
             Destroy(GameObject.FindGameObjectWithTag("Audio"));
             SceneManager.LoadScene(nextLevel, LoadSceneMode.Single);
         }
