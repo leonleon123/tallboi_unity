@@ -25,7 +25,7 @@ public class HatPickup : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("Hat Pickup Player Collided");
+            //Debug.Log("Hat Pickup Player Collided");
             AudioSource audio = GetComponent<AudioSource>();
             
             HatController hatController = other.GetComponent<HatController>();

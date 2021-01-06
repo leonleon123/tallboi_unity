@@ -10,7 +10,7 @@ public class TriggerArea : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Entered");
+            //Debug.Log("Entered");
             EventListener.current.RoomTriggerEnter(id);
         }
     }

@@ -23,7 +23,7 @@ public class HatController : MonoBehaviour
 
     public void addHat()
     {
-        Debug.Log("Adding hat...");
+        //Debug.Log("Adding hat...");
         GameObject hat = Instantiate(hatObject);
         hat.SetActive(true);
         hat.transform.SetParent(head.transform);
@@ -66,7 +66,7 @@ public class HatController : MonoBehaviour
 
     public void removeAllHats()
     {
-        Debug.Log("Removing all hats");
+        //Debug.Log("Removing all hats");
         while(hats.Count > 0)
         {
             removeHat();
