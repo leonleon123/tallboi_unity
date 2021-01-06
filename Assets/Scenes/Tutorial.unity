@@ -602,7 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerDelay: 1
-  timeToActivate: 0.05
+  timeToActivate: 0.02
 --- !u!114 &38928717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49960,7 +49960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerDelay: 1
-  timeToActivate: 0.05
+  timeToActivate: 0.02
 --- !u!4 &6452167697467518305
 Transform:
   m_ObjectHideFlags: 0
