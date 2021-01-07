@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float h, v;
-
+        Cursor.visible = false;
         if(rawMovement)
         {
             h = Input.GetAxisRaw("Horizontal");

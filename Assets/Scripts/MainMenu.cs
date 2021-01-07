@@ -27,6 +27,7 @@ public class MainMenu : MonoBehaviour
         //HelperClass.volumeSFX = sfxSlider.value;
         musicSlider.value = HelperClass.volumeMusic;
         sfxSlider.value = HelperClass.volumeSFX;
+        Cursor.visible = true;
     }
 
     public void ingameSetup()
@@ -127,6 +128,7 @@ public class MainMenu : MonoBehaviour
         if(HelperClass.scene != null)
         { 
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             if (fromMain)
                 defaultGroup.SetActive(true);
             else

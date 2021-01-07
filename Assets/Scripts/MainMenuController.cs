@@ -20,6 +20,7 @@ public class MainMenuController : MonoBehaviour
         if (Input.GetKeyDown(playerControls.menuKey) && mainMenu != null && scene != null)
         {
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             HelperClass.mainMenu = mainMenu;
             HelperClass.scene = scene;
             mainMenu.SetActive(true);
