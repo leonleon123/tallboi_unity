@@ -9,8 +9,8 @@ public class PlayerControls : MonoBehaviour
     public KeyCode resetKey = KeyCode.R;
     public KeyCode activateKey = KeyCode.F;
     public KeyCode jumpKey = KeyCode.Space;
-    public KeyCode Debug_addHat = KeyCode.O;
-    public KeyCode Debug_removeHat = KeyCode.P;
+    public KeyCode Debug_addHat = KeyCode.None;
+    public KeyCode Debug_removeHat = KeyCode.None;
     public KeyCode menuKey = KeyCode.Escape;
     void Start()
     {

@@ -1297,8 +1297,8 @@ MonoBehaviour:
   resetKey: 114
   activateKey: 102
   jumpKey: 32
-  Debug_addHat: 111
-  Debug_removeHat: 112
+  Debug_addHat: 0
+  Debug_removeHat: 0
   menuKey: 27
 --- !u!114 &8258716190867444904
 MonoBehaviour:
@@ -1318,6 +1318,7 @@ MonoBehaviour:
   head: {fileID: 6711325605688348053}
   hatObject: {fileID: 7632602907344774223, guid: 0b3e4f0abe6c87042804341ec107ab94,
     type: 3}
+  removedAllHats: 0
 --- !u!114 &1556656519
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,6 +18,9 @@ public class HatController : MonoBehaviour
     public GameObject head;
     public GameObject hatObject;
 
+    [HideInInspector]
+    public bool removedAllHats = false;
+
     CharacterController controller;
     private PlayerControls controls;
 
@@ -71,6 +74,7 @@ public class HatController : MonoBehaviour
         {
             removeHat();
         }
+        removedAllHats = true;
     }
 
     void Start()

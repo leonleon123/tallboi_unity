@@ -23,5 +23,12 @@ public class CounterThink : MonoBehaviour
         {
             text.color = Color.green;
         }
+        else
+        {
+            text.color = Color.white;
+        }
+
+        if (hc.removedAllHats)
+            transform.parent.gameObject.SetActive(false);
     }
 }
